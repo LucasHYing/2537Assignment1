@@ -8,7 +8,7 @@ const MongoStore = require('connect-mongo');
 const bcrypt = require('bcrypt');
 const saltRounds = 12;
 
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 3000;
 
 const app = express();
 
@@ -34,7 +34,7 @@ const userCollection = database.db(mongodb_database).collection('users');
 app.use(express.urlencoded({extended: false}));
 
 var mongoStore = MongoStore.create({
-	mongoUrl: `mongodb+srv://rimuru:Lungs_674@cluster0.bbqz28s.mongodb.net/sessions`,
+	mongoUrl: `mongodb+srv://rimuru:kJXE6aQSAlJ1l4fd@ass1.sgbkfqx.mongodb.net/?retryWrites=true&w=majority`,
 	crypto: {
 		secret: mongodb_session_secret
 	}
