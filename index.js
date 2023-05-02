@@ -8,7 +8,7 @@ const MongoStore = require('connect-mongo');
 const bcrypt = require('bcrypt');
 const saltRounds = 12;
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8080;
 
 const app = express();
 
@@ -24,7 +24,7 @@ const mongodb_password = process.env.MONGODB_PASSWORD;
 const mongodb_database = process.env.MONGODB_DATABASE;
 const mongodb_session_secret = process.env.MONGODB_SESSION_SECRET;
 
-const node_session_secret = process.env.NODE_SESSION_SECRET;
+const node_session_secret = '5f38883d-77c1-4862-9e62-c0e5b91ca8f3';
 /* END secret section */
 
 var {database} = include('databaseConnection');
@@ -34,7 +34,7 @@ const userCollection = database.db(mongodb_database).collection('users');
 app.use(express.urlencoded({extended: false}));
 
 var mongoStore = MongoStore.create({
-	mongoUrl: `mongodb+srv://${mongodb_user}:${mongodb_password}@${mongodb_host}/sessions`,
+	mongoUrl: `mongodb+srv://rimuru:Lungs_674@cluster0.bbqz28s.mongodb.net/sessions`,
 	crypto: {
 		secret: mongodb_session_secret
 	}
